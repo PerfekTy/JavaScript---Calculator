@@ -11,6 +11,7 @@ body {
 }
 
 h1 {
+    margin-top: 20px;
     text-align: center;
     font-size: 2.6em;
     color: aqua;
@@ -19,41 +20,61 @@ h1 {
 .calc-container {
     display: flex;
     flex-direction: column;
+    height: 80vh;
     justify-content: center;
     align-items: center;
-    min-width: 100vw;
-    min-height: 80vh;
+    margin: auto;
+    width: 330px;
 }
 
 .display {
-    display: flex;
-    min-height: 10vh;
+    width: 100%;
     text-align: right;
-    justify-content: space-between;
     word-wrap: break-word;
     word-break: break-all;
     color: #000;
-    background-color: rgb(110, 0, 0);
+    border-radius: 15px;
+    background-color: rgb(255, 237, 237);
+}
+
+.previousNumber {
+    font-size: 19px;
+    color: #000;
+    margin-right: 10px;
+}
+
+.mathSign {
+    font-size: 17px;
+    color: #000;
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+.currentNumber {
+    font-size: 25px;
+    margin-right: 10px;
+    color: rgb(255, 0, 0);
 }
 
 .numberButtons {
     display: grid;
-    min-width: 30%;
     justify-content: center;
     padding: 3px;
     gap: 3px;
     grid-template-columns: repeat(4, 80px);
-    grid-template-rows: minmax(120px, 1fr), repeat(6, 80px);
+    grid-template-rows: repeat(6, 80px);
 }
 
 .number-btn {
     padding: 20px;
     font-size: 1.5em;
+    border-radius: 15px;
 }
 
 .number-btn:hover {
     transition: all 1s ease-in-out;
     background-color: #fffffe;
+    cursor: pointer;
 }   
 
 .col2 {
