@@ -1,88 +1,118 @@
-*, ::after, ::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+html {
+  font-family: "Montserrat", sans-serif;
 }
 
-body {
-    background-color: black;
-    color: white;
-    font-family: 'Calibri';
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 h1 {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 2.6em;
-    color: aqua;
+  font-size: 3.4em;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 100px;
+  color: #585c5b;
 }
 
-.calc-container {
-    display: flex;
-    flex-direction: column;
-    height: 80vh;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 329px;
-    transition: all 2s ease-in-out;
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    #0e0e0e,
+    #c7db453a,
+    #2dce9e,
+    #7d3ac522,
+    #000000
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  height: 60vh;
+  min-width: 370px;
+  max-width: 370px;
 }
 
 .display {
-    width: 100%;
-    height: 10vh;
-    text-align: right;
-    word-wrap: break-word;
-    word-break: break-all;
-    color: #000;
-    border-radius: 15px;
-    background-color: rgb(255, 237, 237);
-}
-
-.previousNumber {
-    font-size: 19px;
-    color: #000;
-    margin-right: 10px;
-}
-
-.mathSign {
-    font-size: 19px;
-    color: #000;
-    margin-right: 10px;
+  width: 100%;
+  min-height: 20%;
+  max-height: min-content;
+  background-color: rgba(255, 0, 0, 0.151);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+  color: white;
+  word-break: break-all;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 5px;
+  font-weight: bold;
 }
 
 .currentNumber {
-    font-size: 30px;
-    text-align: right;
-    bottom: 0;
-    margin-right: 10px;
-    color: rgb(255, 0, 0);
+  font-size: 40px;
+  margin: 10px;
+  margin-right: 20px;
 }
 
-.numberButtons {
-    display: grid;
-    justify-content: center;
-    padding: 3px;
-    gap: 3px;
-    grid-template-columns: repeat(4, 80px);
-    grid-template-rows: repeat(6, 80px);
+.previousNumber {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  margin: 10px;
+  margin-right: 20px;
 }
 
-.number-btn, .operator, .clear, .equals, .del {
-    padding: 20px;
-    font-size: 1.5em;
-    border-radius: 15px;
+.mathSign {
+  color: #000000;
+  font-size: 27px;
 }
 
-.number-btn, .operator, .clear, .equals, .del:hover {
-    transition: all 1s ease-in-out;
-    background-color: #fffffe;
-    cursor: pointer;
-}   
+.panel {
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 2px;
+}
+
+.panel button {
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.466);
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px 10px 5px 10px;
+  outline: none;
+  box-shadow: (0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(255, 255, 255, 0.09) 0px -3px 5px;
+  transition: all 0.5s ease-in-out;
+}
 
 .col2 {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
+button:hover {
+  background-color: rgba(0, 120, 102, 0.635);
+  transition: all 0.2s ease-in-out;
+}
 
+.equals {
+  grid-row: span 2;
+}
 
+.zero {
+  grid-column: span 2;
+}

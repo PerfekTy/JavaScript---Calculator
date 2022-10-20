@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Calculator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>JavaScript Calculator</h1>
-    <div class="calc-container">
-        <div class="display"> 
-            <div class="previousNumber"></div>
-            <div class="mathSign"></div>
-            <div class="currentNumber"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Javascript Calculator</title>
+  </head>
+  <body>
+    <h1>Javascript Calculator</h1>
+    <div class="calculator">
+      <div class="display">
+        <div class="previousNumber">
+          <p></p>
+          <span class="mathSign"></span>
         </div>
-        <div class="numberButtons">
-            <button class="clear col2">C</button>
-            <button class="del col2"><<<d<</button>
-            <button class="number-btn">7</button>
-            <button class="number-btn">8</button>
-            <button class="number-btn">9</button> 
-            <button class="operator">&times;</button>
-            <button class="number-btn">4</button>             
-            <button class="number-btn">5</button>
-            <button class="number-btn">6</button>
-            <button class="operator">&divide;</button>
-            <button class="number-btn">1</button>
-            <button class="number-btn">2</button>
-            <button class="number-btn">3</button>
-            <button class="operator">&minus;</button>
-            <button class="number-btn">,</button>
-            <button class="number-btn">0</button>
-            <button class="equals">&equals;</button>
-            <button class="operator">&plus;</button>
-        </div>
-    </div>
-    
+        <p class="currentNumber"></p>
+      </div>
+
+      <div class="panel">
+          <button class="clear col2">C</button>
+          <button class="operator">×</button>
+          <button class="operator">÷</button>
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="operator">-</button>
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator">+</button>
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="equals">=</button>
+        <button class="number">,</button>
+        <button class="number zero">0</button>
+      </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
