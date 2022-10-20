@@ -24,11 +24,13 @@ h1 {
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 330px;
+    width: 329px;
+    transition: all 2s ease-in-out;
 }
 
 .display {
     width: 100%;
+    height: 10vh;
     text-align: right;
     word-wrap: break-word;
     word-break: break-all;
@@ -44,14 +46,15 @@ h1 {
 }
 
 .mathSign {
-    font-size: 17px;
+    font-size: 19px;
     color: #000;
-    margin-bottom: 15px;
     margin-right: 10px;
 }
 
 .currentNumber {
-    font-size: 25px;
+    font-size: 30px;
+    text-align: right;
+    bottom: 0;
     margin-right: 10px;
     color: rgb(255, 0, 0);
 }
@@ -65,13 +68,13 @@ h1 {
     grid-template-rows: repeat(6, 80px);
 }
 
-.number-btn {
+.number-btn, .operator, .clear, .equals, .del {
     padding: 20px;
     font-size: 1.5em;
     border-radius: 15px;
 }
 
-.number-btn:hover {
+.number-btn, .operator, .clear, .equals, .del:hover {
     transition: all 1s ease-in-out;
     background-color: #fffffe;
     cursor: pointer;
