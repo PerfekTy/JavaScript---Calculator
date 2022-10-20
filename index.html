@@ -3,10 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
-    />
     <link rel="stylesheet" href="style.css" />
     <title>Javascript Calculator</title>
   </head>
@@ -16,15 +12,16 @@
       <div class="display">
         <div class="previousNumber">
           <p></p>
-          <span class="mathSign"></span>
+          <span class="mathSign"><span/>
         </div>
         <p class="currentNumber"></p>
       </div>
 
       <div class="panel">
-          <button class="clear col2">C</button>
-          <button class="operator">×</button>
-          <button class="operator">÷</button>
+        <button class="clear">CE</button>
+        <button class="del"><<</button>
+        <button class="operator">×</button>
+        <button class="operator">÷</button>
         <button class="number">7</button>
         <button class="number">8</button>
         <button class="number">9</button>
@@ -37,7 +34,7 @@
         <button class="number">2</button>
         <button class="number">3</button>
         <button class="equals">=</button>
-        <button class="number">,</button>
+        <button class="number">.</button>
         <button class="number zero">0</button>
       </div>
     <script src="main.js"></script>

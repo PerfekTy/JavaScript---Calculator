@@ -5,15 +5,12 @@ const numbers = document.querySelectorAll(".number"),
   currentNumber = document.querySelector(".currentNumber"),
   clear = document.querySelector(".clear"),
   del = document.querySelector(".del"),
-  mathSign = document.querySelector(".mathSign"),
-  pow = document.querySelector(".pow");
+  mathSign = document.querySelector(".mathSign");
 
 let result = "";
 
 function addNumber() {
-  if (this.textContent === "," && currentNumber.innerHTML.includes(",")) return;
-  if (this.textContent === "," && currentNumber.innerHTML.includes(""))
-    return (currentNumber.innerHTML = "0,");
+  if (this.textContent === "." && currentNumber.innerHTML.includes(".")) return;
   currentNumber.innerHTML += this.textContent;
 }
 
@@ -25,19 +22,19 @@ function operate() {
     return;
   }
 
-  if (mathSign.innerHTML !== "") {
+  if (mathSign.innerHTML === "") {
     showResult();
   }
 
-  previousNumber.innerHTML = currentNumber.innerHTML;
-  mathSign.innerHTML += this.textContent;
+  mathSign.innerHTML = this.textContent;
+  previousNumber.textContent = currentNumber.innerHTML;
   currentNumber.innerHTML = "";
 }
 
 function showResult() {
   if (previousNumber.innerHTML === "" || currentNumber.innerHTML === "") return;
-  let a = Number(currentNumber.innerHTML);
-  let b = Number(previousNumber.innerHTML);
+  let a = parseFloat(currentNumber.innerHTML);
+  let b = parseFloat(previousNumber.innerHTML);
   let operator = mathSign.innerHTML;
 
   switch (operator) {
@@ -69,6 +66,13 @@ function clearEverything() {
   mathSign.innerHTML = "";
 }
 
+function clearOne() {
+  currentNumber.innerHTML = currentNumber.innerHTML.substring(
+    0,
+    currentNumber.innerHTML.length - 1
+  );
+}
+
 numbers.forEach(btn => {
   btn.addEventListener("click", addNumber);
 });
@@ -80,3 +84,5 @@ operator.forEach(e => {
 equal.addEventListener("click", showResult);
 
 clear.addEventListener("click", clearEverything);
+
+del.addEventListener("click", clearOne);

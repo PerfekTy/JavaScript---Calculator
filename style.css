@@ -22,6 +22,7 @@ h1 {
 
 body {
   min-height: 100vh;
+  word-spacing: 3px;
   background-image: linear-gradient(
     to right bottom,
     #0e0e0e,
@@ -79,11 +80,11 @@ body {
 }
 
 .panel {
-  height: 80%;
+  height: 85%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  gap: 2px;
+  gap: 5px;
 }
 
 .panel button {
