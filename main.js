@@ -18,16 +18,15 @@ function operate() {
   if (currentNumber.innerHTML === "" && this.textContent === "-") {
     currentNumber.innerHTML = "-";
     return;
-  } else if (currentNumber.innerHTML === "") {
-    return;
   }
 
   if (mathSign.innerHTML === "") {
     showResult();
   }
 
-  mathSign.innerHTML = this.textContent;
+  currentNumber.innerHTML += this.textContent;
   previousNumber.textContent = currentNumber.innerHTML;
+  mathSign.textContent = this.textContent;
   currentNumber.innerHTML = "";
 }
 
