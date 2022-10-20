@@ -18,6 +18,8 @@ function operate() {
   if (currentNumber.innerHTML === "" && this.textContent === "-") {
     currentNumber.innerHTML = "-";
     return;
+  } else if (currentNumber.innerHTML === "") {
+    return;
   }
 
   if (mathSign.innerHTML === "") {
