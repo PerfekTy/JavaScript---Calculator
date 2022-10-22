@@ -1,5 +1,5 @@
 # JavaScript Calculator
-Live --->  https://perfekty.github.io/calculatorJS/
+Live --->  https://perfekty.github.io/JavaScript---Calculator/
 
 Hello,
 
