@@ -21,10 +21,16 @@ function addNumber() {
   ) {
     currentNumber.innerHTML = currentNumber.innerHTML
       .replace("0", this.textContent)
-      .substring(0, currentNumber.innerHTML.length - 1);
+      .substring(0, currentNumber.innerHTML.length);
   } else if (currentNumber.innerHTML === "0" && this.textContent === ".") {
     currentNumber.innerHTML === "0.";
+  } else if (currentNumber.innerHTML == result) {
+    currentNumber.innerHTML = currentNumber.innerHTML.replace(
+      result,
+      this.textContent
+    );
   }
+  currentNumber.classList.remove("divide");
   currentNumber.innerHTML += this.textContent;
 }
 
@@ -74,6 +80,7 @@ function showResult() {
       divitionZero();
       break;
   }
+
   currentNumber.innerHTML = result;
   previousNumber.innerHTML = "";
   mathSign.innerHTML = "";
