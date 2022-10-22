@@ -1,3 +1,5 @@
+// All global variables
+
 const numbers = document.querySelectorAll(".number"),
   operator = document.querySelectorAll(".operator"),
   equal = document.querySelector(".equals"),
@@ -9,13 +11,27 @@ const numbers = document.querySelectorAll(".number"),
 
 let result = "";
 
+//Display numbers
+
 function addNumber() {
   if (this.textContent === "." && currentNumber.innerHTML.includes(".")) return;
+  if (
+    currentNumber.innerHTML.startsWith("0") ||
+    currentNumber.innerHTML.charAt(0) === "0"
+  ) {
+    currentNumber.innerHTML = currentNumber.innerHTML
+      .replace("0", this.textContent)
+      .substring(0, currentNumber.innerHTML.length - 1);
+  } else if (currentNumber.innerHTML === "0" && this.textContent === ".") {
+    currentNumber.innerHTML === "0.";
+  }
   currentNumber.innerHTML += this.textContent;
 }
 
+// Operates on numbers
+
 function operate() {
-  if (currentNumber.innerHTML === "" && this.textContent === "-") {
+  if (currentNumber.innerHTML === "0" && this.textContent === "-") {
     currentNumber.innerHTML = "-";
     return;
   } else if (currentNumber.innerHTML === "") {
@@ -32,11 +48,13 @@ function operate() {
   currentNumber.innerHTML = "";
 }
 
+// Showing result
+
 function showResult() {
   if (previousNumber.innerHTML === "" || currentNumber.innerHTML === "") return;
+  let operator = mathSign.innerHTML;
   let a = parseFloat(currentNumber.innerHTML);
   let b = parseFloat(previousNumber.innerHTML);
-  let operator = mathSign.innerHTML;
 
   switch (operator) {
     case "+":
@@ -53,19 +71,37 @@ function showResult() {
 
     case "÷":
       result = b / a;
+      divitionZero();
       break;
   }
-
   currentNumber.innerHTML = result;
   previousNumber.innerHTML = "";
   mathSign.innerHTML = "";
 }
 
+// Codition for dividing by 0
+
+function divitionZero() {
+  let a = parseFloat(currentNumber.innerHTML);
+  let b = parseFloat(previousNumber.innerHTML);
+  if (a == 0 && a == -0) {
+    result = "Don't divide by 0!";
+    currentNumber.innerHTML = result;
+    currentNumber.classList.toggle("divide");
+  }
+}
+
+// Clear everything button
+
 function clearEverything() {
-  currentNumber.innerHTML = "";
+  currentNumber.innerHTML = "0";
   previousNumber.innerHTML = "";
   mathSign.innerHTML = "";
+
+  currentNumber.classList.remove("divide");
 }
+
+// Clear only one sign
 
 function clearOne() {
   currentNumber.innerHTML = currentNumber.innerHTML.substring(
@@ -73,6 +109,8 @@ function clearOne() {
     currentNumber.innerHTML.length - 1
   );
 }
+
+// Event Listeners
 
 numbers.forEach(btn => {
   btn.addEventListener("click", addNumber);

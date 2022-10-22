@@ -1,3 +1,5 @@
+/* Global settings */
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
 html {
@@ -11,6 +13,8 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+
+/* body styling */
 
 h1 {
   font-size: 3.4em;
@@ -37,10 +41,16 @@ body {
   align-items: center;
 }
 
+/* Calculator styling */
+
 .calculator {
   height: 60vh;
   min-width: 370px;
   max-width: 370px;
+}
+
+.divide {
+  color: red;
 }
 
 .display {
@@ -62,7 +72,7 @@ body {
 }
 
 .currentNumber {
-  font-size: 40px;
+  font-size: 35px;
   margin: 10px;
   margin-right: 20px;
 }
@@ -116,4 +126,18 @@ button:hover {
 
 .zero {
   grid-column: span 2;
+}
+
+/* Media querys */
+
+@media only screen and (max-width: 1000px) {
+  h1 {
+    display: none;
+  }
+
+  .panel {
+    height: 100%;
+    gap: 1px;
+    width: 100%;
+  }
 }
