@@ -1,4 +1,4 @@
-# calculatorJS
+# JavaScript Calculator
 Live --->  https://perfekty.github.io/calculatorJS/
 
 Hello,
