@@ -1,4 +1,5 @@
 # calculatorJS
+Live --->  https://perfekty.github.io/calculatorJS/
 Hello,
 there is my small project of JavaScript calculator.
 You can perfrom basic opertations like *, /, -, +.
