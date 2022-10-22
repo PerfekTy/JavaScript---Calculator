@@ -29,9 +29,9 @@ body {
   word-spacing: 3px;
   background-image: linear-gradient(
     to right bottom,
-    #0e0e0e,
-    #c7db453a,
-    #2dce9e,
+    #7a0e0e,
+    #ddff003a,
+    #632dce,
     #7d3ac522,
     #000000
   );
@@ -72,21 +72,16 @@ body {
 }
 
 .currentNumber {
-  font-size: 35px;
+  font-size: 37px;
   margin: 10px;
   margin-right: 20px;
 }
 
 .previousNumber {
-  color: rgb(0, 0, 0);
-  font-size: 30px;
+  color: rgb(92, 0, 163);
+  font-size: 32px;
   margin: 10px;
   margin-right: 20px;
-}
-
-.mathSign {
-  color: #000000;
-  font-size: 27px;
 }
 
 .panel {
@@ -133,6 +128,14 @@ button:hover {
 @media only screen and (max-width: 1000px) {
   h1 {
     display: none;
+  }
+
+  .currentNumber {
+    font-size: 27px;
+  }
+
+  .previousNumber {
+    font-size: 22px;
   }
 
   .panel {
