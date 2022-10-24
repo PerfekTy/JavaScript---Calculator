@@ -21,14 +21,12 @@ function addNumber() {
   ) {
     currentNumber.innerHTML = currentNumber.innerHTML
       .replace("0", this.textContent)
-      .substring(0, currentNumber.innerHTML.length);
+      .substring(0, currentNumber.innerHTML.length - 1);
   } else if (currentNumber.innerHTML === "0" && this.textContent === ".") {
     currentNumber.innerHTML === "0.";
-  } else if (currentNumber.innerHTML == result) {
-    currentNumber.innerHTML = currentNumber.innerHTML.replace(
-      result,
-      this.textContent
-    );
+  }
+  if (result != 0) {
+    currentNumber.innerHTML = currentNumber.innerHTML.replace(result, "");
   }
   currentNumber.classList.remove("divide");
   currentNumber.innerHTML += this.textContent;
