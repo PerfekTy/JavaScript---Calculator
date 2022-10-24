@@ -5,6 +5,7 @@ Hello,
 there is my small project of JavaScript calculator.
 
 Features:
+
 ✩ `You can perfrom basic opertations like *, /, -, +.`
 
 ✩ `Dividing by zero doesn't work, try if you don't believe me :)`
